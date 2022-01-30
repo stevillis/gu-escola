@@ -1,1 +1,1 @@
-# gw-escola
+# gu-escola
