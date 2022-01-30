@@ -25,6 +25,7 @@ class CursoSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "titulo",
+            "url",
             "criacao",
             "ativo",
         )
