@@ -1,8 +1,9 @@
 from django.urls import path
 from rest_framework.routers import SimpleRouter
 
-from cursos.views import (AvaliacaoAPIView, AvaliacoesAPIView, CursoAPIView,
-                          CursosAPIView, CursoViewSet, AvaliacaoViewSet)
+from cursos.views import (AvaliacaoAPIView, AvaliacaoViewSet,
+                          AvaliacoesAPIView, CursoAPIView, CursosAPIView,
+                          CursoViewSet)
 
 """
 API v1
