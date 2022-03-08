@@ -1,4 +1,4 @@
-from rest_framework import mixins, viewsets
+from rest_framework import permissions, mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.generics import (ListCreateAPIView,
                                      RetrieveUpdateDestroyAPIView,
@@ -52,6 +52,7 @@ API v2
 
 
 class CursoViewSet(viewsets.ModelViewSet):
+    permission_classes = (permissions.DjangoModelPermissions,)
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
 

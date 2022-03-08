@@ -18,6 +18,8 @@ Generate Token
 >>> token = Token.objects.create(user=user)
 >>> token.key
 '22c4f0770323557ee4d67258c66e9df5d7660fde'
+
+# Token teste: 6e6ab3885e67fcc06fabc926a277b07c3bd86be8
 """
 import os.path
 from pathlib import Path
