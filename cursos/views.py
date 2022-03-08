@@ -6,6 +6,7 @@ from rest_framework.generics import (ListCreateAPIView,
 from rest_framework.response import Response
 
 from cursos.models import Avaliacao, Curso
+from cursos.permissions import IsSuperUser
 from cursos.serializers import AvaliacaoSerializer, CursoSerializer
 
 """
@@ -52,7 +53,10 @@ API v2
 
 
 class CursoViewSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.DjangoModelPermissions,)
+    permission_classes = (
+        IsSuperUser,
+        permissions.DjangoModelPermissions
+    )
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
 
