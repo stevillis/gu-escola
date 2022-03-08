@@ -8,6 +8,16 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
+
+Generate Token
+>>> from rest_framework.authtoken.models import Token
+>>> from django.contrib.auth.models import User
+>>> user = User.objects.get(id=1)
+>>> user
+<User: admin>
+>>> token = Token.objects.create(user=user)
+>>> token.key
+'22c4f0770323557ee4d67258c66e9df5d7660fde'
 """
 import os.path
 from pathlib import Path
@@ -38,6 +48,7 @@ INSTALLED_APPS = [
 
     'django_filters',
     'rest_framework',
+    'rest_framework.authtoken',
 
     'cursos',
 ]
@@ -130,7 +141,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # DRF
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
