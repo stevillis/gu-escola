@@ -5,11 +5,6 @@ headers = {
 }
 BASE_URL = 'http://localhost:8000/api/v2/'
 
-atualizacao = {
-    'titulo': 'Libras para Refugiados',
-    'url': 'https://www.google.com/courses/libras-para-refugiados'
-}
-
 response = requests.delete(url=f'{BASE_URL}cursos/4/', headers=headers)
 
 assert response.status_code == 204
